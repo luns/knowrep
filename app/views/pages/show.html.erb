@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+
+<div id="docs">
+<strong>Text:</strong>
+<pre>
+ <%= @page.text %>
+</pre>
+</div>
+
+<%= link_to 'Edit', edit_page_path(@page)%> |
+<%= link_to 'Back', pages_path %>
