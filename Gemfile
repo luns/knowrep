@@ -49,3 +49,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'susy', '~> 2.2.5'
+
+gem 'ckeditor'
+gem 'RedCloth'

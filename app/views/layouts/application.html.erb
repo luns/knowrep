@@ -5,9 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+<div class="header">
 
+  header
+
+</div>
 <!-- Greedless block
 
 <div class="group">
@@ -23,14 +28,21 @@
 <div class="group">
   -- content here --
 </div>-->
-
+<div class="content">
 <nav>
 
-  dfddfdfdf
+  <ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+  </ul>
 
 </nav>
-<%= yield %>
+<div class="main">
+  <%= yield %>
+</div>
 
+</div>
 
 </body>
 </html>

@@ -13,4 +13,6 @@
 //= require prototype
 //= require prototype_ujs
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
+
