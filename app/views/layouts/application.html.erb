@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="header">
@@ -14,30 +14,35 @@
 
 </div>
 
-<div class="content">
-  <div class="routing-bar">
-    knowrep
-  </div>
-<div class="nav-left">
-<h4>knowrep</h4>
-  <ul>
+    <div class="content">
+          <div class="routing-bar">
+            knowrep
+          </div>
+      <div class="breadcrumbs">
+        <i class="fa fa-book"></i> home <i class="fa fa-angle-right"></i> test <i class="fa fa-angle-right"></i> test 1 <i class="fa fa-angle-right"></i> test 2 <i class="fa fa-angle-right"></i> here ...
+        <div class="br-right">
+        <i class="fa fa-plus-square"></i> добавить
+        </div>
+      </div>
+        <div class="nav-left">
 
-    <li>11</li>
-    <li>22</li>
-    <li>33</li>
-  </ul>
+            <ul>
+             <li><i class="fa fa-tasks"></i> Задачи</li>
+            <li>22</li>
+            <li>33</li>
+          </ul>
 
-</div>
-  <div class="breadcamps">
-    home / test /test 1 / test 2 /here ...
-  </div>
-<div class="main">
-  <%= yield %>
-</div>
-  <div class="nav-right">
-1
-  </div>
-</div>
+
+        </div>
+
+        <div class="main">
+          <%= yield %>
+
+        </div>
+          <div class="nav-right">
+        1
+          </div>
+    </div>
 
 </body>
 </html>

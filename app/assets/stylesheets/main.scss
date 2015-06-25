@@ -27,7 +27,11 @@ $susy: (
         )
 );
 
+@import "const";
+
+
 //базовое
+
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, p, blockquote, th, td, button {
   margin: 0;
@@ -71,7 +75,7 @@ body {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
-  background: #f7f7f7;
+  background: $color-background;
   -webkit-text-size-adjust: none;
   overflow-y: scroll
 }
@@ -100,7 +104,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline
+  //text-decoration: underline
 }
 
 img {
@@ -115,55 +119,105 @@ hr {
 
 //разметка
 
+
+
 .routing-bar {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 43px;
+  height: 30px;
 
-  background: #464C5C;
+  background: #58627d;
   z-index: 80;
-  box-shadow: 0 2px 1px rgba(0, 128, 255, 0.25)
+  box-shadow: 0 1px 0px #303544;
+
+  padding-left: 15px;
+  padding-top: 10px;
+  //font
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.nav-left { @include span(2);
-background: #dad4d7;
-  color: #f8f8f8;
+.breadcrumbs {
+  color: #000A65;
   position: fixed;
-  top: 0px;
+  top: 40px;
+  width: 100%;
+  height: 25px;
+  background: $color-background;
+  box-shadow: 0 1px 0px $color-border-box;
+  padding-left: 15px;
+  padding-top: 5px;
+  //font
+  color: #464C5C;
+  font-weight: bold;
+  text-decoration: none;
+  .br-right{
+    float: right;
+    padding-right: 30px;
+  }
+ }
+
+.nav-left { @include span(2);
+//background: #dad4d7;
+  color: #646d84;
+  position: fixed;
+  top: 80px;
   bottom: 0px;
   left: 0px;
-  box-shadow: 3px 0px 2px -1px #000000;
+  padding-left: 10px;
+  //box-shadow: 3px 0px 2px -1px #000000;
+  font-weight: bold;
 
 }
 
 .nav-right { @include span(2);
-    background: #bebebe;
+    //background: #bebebe;
     color: #f8f8f8;
     position: fixed;
     top: 0px;
     bottom: 0px;
     right: 0px;
-    box-shadow: -3px 0px 2px -1px #000000;
+    //box-shadow: -3px 0px 2px -1px #000000;
     margin-right: 0;
   }
 
-.breadcamps {
-  background: #bebebe ;
-  width: span(8);
-  margin-left: span(2) + gutter();
-  margin-right: span(2) + gutter();
-  margin-bottom: 10px;
-  position: fixed;
-  top: 0px;
 
-}
 
 .main {
   width: span(8);
   margin-left: span(2) + gutter();
   margin-right: span(2) + gutter();
-  margin-top: 50px;
+  margin-top: 60px;
+
+}
+
+.block{
+  margin: $block-padding;
+  padding: $block-padding;
+  border: 0.5px solid $color-border-box;
+  background: $color-block-background;
+  border-radius: 3px;
+  .bl-header{
+    //background: #fbfbfb;
+    padding-bottom: $block-padding;
+    margin-bottom: $block-padding;
+    border-bottom: 1px solid $color-border-box;
+
+  }
+
+  .bl-footer{
+    border-top: 1px solid $color-border-box;
+    margin-bottom: $block-padding * 2;
+    margin-top: $block-padding * 2;
+    padding-top: $block-padding * 2;
+    padding-bottom: $block-padding * 2;
+    color: dimgrey;
+  }
+  .bl-right{
+    float: right;
+  }
 }
 
 pre, code, kbd, samp {
@@ -177,15 +231,24 @@ pre, code, kbd, samp {
 
 
 #docs {
-  font-family: Palatino, Georgia, serif;
+  //font-family: Palatino, Georgia, serif;
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
+
 }
 
 textarea {
   overflow: auto;
   vertical-align: top
+}
+
+#notice{
+  //background: greenyellow;
+  //margin: 5px;
+  //padding: 5px;
+  //border: 0.5px solid $color-border-box;
+  border-radius: 3px;
 }
 
 //->

@@ -1,37 +1,58 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'Edit', edit_page_path(@page)%> |
-<%= link_to 'Back', pages_path %>
 
 
-<strong>Text:</strong>
-<div class="docs">
- <%= raw RedCloth.new(@page.text).to_html %>
+
+<p id="notice"><%= notice.to_s %></p>
+<div class="block">
+  <div class="bl-header">
+    123456
+    <div class="bl-right">
+      <%= link_to '', edit_page_path(@page), class: 'fa fa-edit' %>
+      <%#= link_to 'Back', pages_path %>
+    </div>
+  </div>
+  <div id="docs">
+    <%= raw RedCloth.new(@page.text).to_html %>
+  </div>
+
+  <div class="bl-footer">
+    <div class="bl-right">
+    <i class="fa fa-clock-o"></i> <%= @page.updated_at %>
+    </div>
+  </div>
 </div>
 
-<h2>Comments</h2>
-<% @page.comments.each do |comment| %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.commenter %>
-    </p>
+<div class="block">
+  <div class="bl-header">
+    <h2>комментарии</h2>
+    </div>
 
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
-<% end %>
+  <% @page.comments.each do |comment| %>
+      <p>
+        <strong>автор:</strong>
+        <%= comment.commenter %>
+      </p>
 
-<h2>Add a comment:</h2>
-<%= form_for([@page, @page.comments.build]) do |f| %>
-    <p>
-      <%= f.label :commenter %><br>
-      <%= f.text_field :commenter %>
-    </p>
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
+      <p>
+        <strong>комментарий:</strong>
+        <%= comment.body %>
+      </p>
+  <% end %>
+
+  <h2>добавить:</h2>
+  <%= form_for([@page, @page.comments.build]) do |f| %>
+      <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter %>
+      </p>
+
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
+
+</div>
