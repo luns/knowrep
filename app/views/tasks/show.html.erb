@@ -1,0 +1,16 @@
+<div class="block">
+  <div class="bl-header">
+    <p id="notice"><%= notice %></p>
+   <b>
+    <%= @task.theme %>
+   </b>
+     <div class="bl-right">
+      <%= @task.status %> | <%= @task.author %>
+    </div>
+  </div>
+     <%= raw RedCloth.new(@task.description).to_html %>
+   <div class="bl-footer">
+    <%= link_to 'Edit', edit_task_path(@task) %> |
+    <%= link_to 'Back', tasks_path %>
+  </div>
+</div>
