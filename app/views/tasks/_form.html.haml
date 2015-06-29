@@ -1,0 +1,12 @@
+= form_for(@task) do |f|
+  %p тема:
+  = f.text_field :theme
+  %p автор:
+  = f.text_field :author
+  %p статус:
+  = f.text_field :status
+  %p
+  .field
+    = f.cktext_area :description
+  %p
+    = f.submit

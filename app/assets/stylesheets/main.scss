@@ -52,7 +52,7 @@ address, caption, cite, code, dfn, th, var {
 }
 
 ol, ul {
-  list-style: none
+  //list-style: none
 }
 
 caption, th {
@@ -202,7 +202,9 @@ hr {
     border-bottom: 1px solid $color-border-box;
 
   }
-
+  .bl-main {
+    padding: $block-padding * 3;
+  }
   .bl-footer {
     border-top: 1px solid $color-border-box;
     margin-bottom: $block-padding;
@@ -212,7 +214,7 @@ hr {
     color: dimgrey;
   }
   .bl-right {
-    width: 30%;
+    //width: 30%;
     float: right;
     ul {
       padding: 0;
@@ -259,11 +261,90 @@ textarea {
   background: #eff8ff;
 }
 
-.info-bg{
+.info-bg {
   color: #b0b0b0;
   font-size: 20px;
   font-weight: bold;
 
+}
+
+.id-label {
+  //background: #fbfbfb;
+  display: inline;
+  //padding-left: 5px;
+  border: solid #d6d3e8 1px;
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 5px;
+  padding-right: 5px;
+  text-align: center;
+
+}
+
+.id-label:hover {
+  border: solid #6e74e8 1px;
+}
+
+.id-label:before {
+  border-right: solid #d6d3e8 1px;
+  content: "ID";
+  padding-right: 3px;
+  background: rgba(244, 245, 255, 0.25);
+  padding-left: 4px;
+  color: rgba(135, 132, 146, 0.77);
+  text-align: center;
+}
+
+.id-label-status {
+  //background: #fbfbfb;
+  display: inline;
+  //padding-left: 5px;
+  border: solid #d6d3e8 1px;
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 5px;
+  padding-right: 5px;
+  text-align: center;
+
+}
+
+.id-label-status:before {
+  border-right: solid #d6d3e8 1px;
+  content: "СТ";
+  padding-right: 3px;
+  background: rgba(244, 245, 255, 0.25);
+  padding-left: 4px;
+  color: rgba(135, 132, 146, 0.77);
+  text-align: center;
+}
+
+.id-label-author {
+  //background: #fbfbfb;
+  display: inline;
+  //padding-left: 5px;
+  border: solid #d6d3e8 1px;
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 5px;
+  padding-right: 5px;
+  text-align: center;
+
+}
+
+.id-label-author:before {
+  border-right: solid #d6d3e8 1px;
+  content: "АВ";
+  padding-right: 3px;
+  background: rgba(244, 245, 255, 0.25);
+  padding-left: 4px;
+  color: rgba(135, 132, 146, 0.77);
+  text-align: center;
+}
+
+.status-done {
+  text-decoration: line-through;
+  display: inline;
+  color: grey;
 }
 
 //->

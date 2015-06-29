@@ -1,0 +1,19 @@
+.block
+  .bl-header
+    -#%p .notice
+    -#= notice
+    .id-label
+      = @task.id
+    .id-label-status
+      = @task.status
+    .bl-right
+      .id-label-author
+        = @task.author
+  .bl-main
+    %b= @task.theme
+    = raw RedCloth.new(@task.description).to_html
+  .bl-footer
+    = link_to 'Edit', edit_task_path(@task)
+    = link_to 'Back', tasks_path
+    .bl-right
+      = @task.updated_at.strftime('%m.%d.%Y %H:%M')
