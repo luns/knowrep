@@ -256,10 +256,7 @@ textarea {
   border-radius: 3px;
 }
 
-.label {
-  border-radius: 2px;
-  background: #eff8ff;
-}
+
 
 .info-bg {
   color: #b0b0b0;
@@ -278,21 +275,55 @@ textarea {
   margin-right: 5px;
   padding-right: 5px;
   text-align: center;
+  &:hover{border: solid #6e74e8 1px;}
+  &:before {
+    border-right: solid #d6d3e8 1px;
+    content: "ID";
+    padding-right: 3px;
+    background: rgba(244, 245, 255, 0.25);
+    padding-left: 4px;
+    color: rgba(135, 132, 146, 0.77);
+    text-align: center;
+  }
 
+  &.red{
+    background: red;
+  }
 }
 
-.id-label:hover {
-  border: solid #6e74e8 1px;
-}
-
-.id-label:before {
-  border-right: solid #d6d3e8 1px;
-  content: "ID";
-  padding-right: 3px;
-  background: rgba(244, 245, 255, 0.25);
-  padding-left: 4px;
-  color: rgba(135, 132, 146, 0.77);
+@mixin label {
+  display: inline;
+  border: solid #d6d3e8 1px;
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 5px;
+  padding-right: 5px;
   text-align: center;
+  &:hover {
+    border: solid #6e74e8 1px;
+  }
+  &:before {
+    border-right: solid #d6d3e8 1px;
+    padding-right: 3px;
+    background: rgba(244, 245, 255, 0.25);
+    padding-left: 4px;
+    color: rgba(135, 132, 146, 0.77);
+    text-align: center;
+  }
+}
+
+.ls-r {
+@include label;
+  &:before{
+    content: 'OP';
+  }
+}
+
+.ls-d {
+  @include label;
+  &:before{
+    content: 'OH';
+  }
 }
 
 .id-label-status {
@@ -310,12 +341,13 @@ textarea {
 
 .id-label-status:before {
   border-right: solid #d6d3e8 1px;
-  content: "СТ";
+  content: "\f05a";
   padding-right: 3px;
   background: rgba(244, 245, 255, 0.25);
   padding-left: 4px;
   color: rgba(135, 132, 146, 0.77);
   text-align: center;
+  font-family: 'FontAwesome';
 }
 
 .id-label-author {
@@ -333,12 +365,13 @@ textarea {
 
 .id-label-author:before {
   border-right: solid #d6d3e8 1px;
-  content: "АВ";
+  content: "\f007";
   padding-right: 3px;
   background: rgba(244, 245, 255, 0.25);
   padding-left: 4px;
   color: rgba(135, 132, 146, 0.77);
   text-align: center;
+  font-family: 'FontAwesome';
 }
 
 .status-done {
@@ -349,3 +382,6 @@ textarea {
 
 //->
 
+.field_with_errors{
+  border: solid #e80019 1px;
+}
