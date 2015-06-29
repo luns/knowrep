@@ -1,0 +1,10 @@
+.block
+  .bl-header
+    - @tasks.each do |task|
+      .bl-header
+        %b = task.id
+        |
+        = link_to task.theme, task
+        .bl-right
+          = task.author
+          = task.updated_at

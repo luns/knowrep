@@ -6,7 +6,7 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :'.index.html.html.json'
     assert_response :success
     assert_not_nil assigns(:tasks)
   end

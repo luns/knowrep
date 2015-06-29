@@ -1,5 +1,5 @@
 #TODO: перегрупировать файл
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -52,5 +52,6 @@ gem 'susy', '~> 2.2.5'
 
 gem 'ckeditor'
 gem 'RedCloth'
-gem "slim-rails"
+gem 'slim-rails'
+gem 'haml-rails'
 

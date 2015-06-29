@@ -3,7 +3,7 @@
   <div class="bl-header">
     <%= link_to '', new_task_path, class: 'fa fa-plus-square' %>
   </div>
-
+<%= if @tasks.count == 0 then (%> <div class='info-bg'>нет задач (нажмите для [+] для создания новой)</div> <%=) end%>
   <% @tasks.each do |task| %>
       <!--<div class="block">-->
       <div class="bl-header">
@@ -24,6 +24,7 @@
       <!-- -->
       <!--</div>-->
       <!--</div>-->
+
   <% end %>
 </div>
 
