@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :tasks
-  resources :pages do
+  resources :tasks do
     resources :comments
+  end
+  resources :pages do
+
   end
   get 'welcome/index'
 

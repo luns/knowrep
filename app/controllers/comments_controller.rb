@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    @page = Page.find(params[:page_id])
-    @comment = @page.comments.create(comment_params)
-    redirect_to page_path(@page)
+    @task = task.find(params[:task_id])
+    @comment = @task.comments.create(comment_params)
+    redirect_to task_path(@task)
   end
 
   private

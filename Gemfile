@@ -52,6 +52,5 @@ gem 'susy', '~> 2.2.5'
 
 gem 'ckeditor'
 gem 'RedCloth'
-gem 'slim-rails'
 gem 'haml-rails'
-
+gem 'simple_form'
