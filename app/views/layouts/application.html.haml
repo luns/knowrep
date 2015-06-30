@@ -13,24 +13,8 @@
       .routing-bar
         knowrep
       .breadcrumbs
-        %i.fa.fa-book
-        home
-        %i.fa.fa-angle-right
-        test
-        %i.fa.fa-angle-right
-        test 1
-        %i.fa.fa-angle-right
-        test 2
-        %i.fa.fa-angle-right
-        here ...
-        -#.br-right
-          %i.fa.fa-plus-square добавить
+        = render_breadcrumbs
       .nav-left
-      / <ul>
-      / <li><i class="fa fa-tasks"></i> Задачи</li>
-      / <li>22</li>
-      / <li>33</li>
-      / </ul>
       .main
         = yield
       .nav-right

@@ -55,3 +55,4 @@ gem 'RedCloth'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'paperclip'
+gem "breadcrumbs_on_rails"
