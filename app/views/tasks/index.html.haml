@@ -2,7 +2,7 @@
   = link_to '', new_task_path, class: 'fa fa-plus-square'
 - @tasks.each do |task|
   .block
-    .id-label
+    .label-id
       = task.id
     - if task.status == 'Завершено' then
       .status-done
@@ -10,8 +10,8 @@
     - else
       = link_to task.theme, task
     .bl-right
-      .id-label-author
+      .label-author
         = task.author
-      .id-label-status
+      .label-status
         = task.status
       -#= task.updated_at.strftime('%m.%d.%Y %H:%M')

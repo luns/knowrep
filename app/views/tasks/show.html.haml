@@ -2,13 +2,15 @@
   .bl-header
     -#%p .notice
     -#= notice
-    .ls-r
+    .label-id
       = @task.id
-    .ls-d
+    .label-status
       = @task.status
     .bl-right
-      .id-label-author
+      .label-author
         = @task.author
+      .label-date
+        = @task.updated_at.strftime('%m.%d.%Y %H:%M')
   .bl-main
     %b= @task.theme
     = raw RedCloth.new(@task.description).to_html
@@ -16,16 +18,25 @@
     = link_to 'Edit', edit_task_path(@task)
     = link_to 'Back', tasks_path
     .bl-right
-      = @task.updated_at.strftime('%m.%d.%Y %H:%M')
-%h2 Add a comment:
-= form_for([@task, @task.comments.build]) do |f|
-  %p
-    = f.label :commenter
-    %br/
-    = f.text_field :commenter
-  %p
-    = f.label :body
-    %br/
-    = f.text_area :body
-  %p
-    = f.submit
+
+- @task.comments.each do |comment|
+  .block
+    .bl-header
+      .label-author
+        = comment.commenter
+      .bl-right
+        = link_to 'Удалить', [comment.task, comment], |
+          method: :delete,                                       |
+          data: { confirm: 'Удалить комментарий?' }
+    %p
+      = comment.body
+
+.block
+  -#%h4 добавить комментарий:
+  = simple_form_for([@task, @task.comments.build]) do |f|
+    %p
+      -#= f.label :commenter, label: 'автор'
+      = f.text_field :commenter, :class => 'field'
+      = f.text_area :body, :class => 'field'
+      %p
+        = f.submit

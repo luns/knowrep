@@ -1,12 +1,11 @@
 = simple_form_for @task do |f|
   %p тема:
-  = f.text_field :theme
+  = f.text_field :theme, :class => 'field'
   %p автор:
   = f.text_field :author
   %p статус:
   = f.text_field :status
   %p
-  .field
-    = f.cktext_area :description
+  = f.cktext_area :description, :class => 'field', :ckeditor => {:toolbar => 'mini'}
   %p
     = f.submit

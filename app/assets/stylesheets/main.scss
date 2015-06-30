@@ -195,6 +195,7 @@ hr {
   border: 0.5px solid $color-border-box;
   background: $color-block-background;
   border-radius: 3px;
+  width: 100%;
   .bl-header {
     //background: #fbfbfb;
     padding-bottom: $block-padding;
@@ -291,88 +292,8 @@ textarea {
   }
 }
 
-@mixin label {
-  display: inline;
-  border: solid #d6d3e8 1px;
-  border-radius: 2px;
-  margin-left: 2px;
-  margin-right: 5px;
-  padding-right: 5px;
-  text-align: center;
-  &:hover {
-    border: solid #6e74e8 1px;
-  }
-  &:before {
-    border-right: solid #d6d3e8 1px;
-    padding-right: 3px;
-    background: rgba(244, 245, 255, 0.25);
-    padding-left: 4px;
-    color: rgba(135, 132, 146, 0.77);
-    text-align: center;
-  }
-}
 
-.ls-r {
-@include label;
-  &:before{
-    content: 'OP';
-  }
-}
 
-.ls-d {
-  @include label;
-  &:before{
-    content: 'OH';
-  }
-}
-
-.id-label-status {
-  //background: #fbfbfb;
-  display: inline;
-  //padding-left: 5px;
-  border: solid #d6d3e8 1px;
-  border-radius: 2px;
-  margin-left: 2px;
-  margin-right: 5px;
-  padding-right: 5px;
-  text-align: center;
-
-}
-
-.id-label-status:before {
-  border-right: solid #d6d3e8 1px;
-  content: "\f05a";
-  padding-right: 3px;
-  background: rgba(244, 245, 255, 0.25);
-  padding-left: 4px;
-  color: rgba(135, 132, 146, 0.77);
-  text-align: center;
-  font-family: 'FontAwesome';
-}
-
-.id-label-author {
-  //background: #fbfbfb;
-  display: inline;
-  //padding-left: 5px;
-  border: solid #d6d3e8 1px;
-  border-radius: 2px;
-  margin-left: 2px;
-  margin-right: 5px;
-  padding-right: 5px;
-  text-align: center;
-
-}
-
-.id-label-author:before {
-  border-right: solid #d6d3e8 1px;
-  content: "\f007";
-  padding-right: 3px;
-  background: rgba(244, 245, 255, 0.25);
-  padding-left: 4px;
-  color: rgba(135, 132, 146, 0.77);
-  text-align: center;
-  font-family: 'FontAwesome';
-}
 
 .status-done {
   text-decoration: line-through;
@@ -382,6 +303,83 @@ textarea {
 
 //->
 
+.field{
+  width: 99%;
+  margin: 2px;
+  //display: block;
+  align-content: center;
+  &:hover{
+
+  }
+}
+
 .field_with_errors{
   border: solid #e80019 1px;
+}
+
+// - лейбы - старт
+$label-color-background: rgba(244, 245, 255, 0.25);
+$label-color-border-hover: rgb(124, 122, 255);
+@mixin label {
+  display: inline;
+  border: solid #d6d3e8 1px;
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 5px;
+  padding-right: 5px;
+  text-align: center;
+  &:hover {
+    border: solid $label-color-border-hover 1px;
+  }
+  &:before {
+    border-right: solid #d6d3e8 1px;
+    padding-right: 3px;
+    background: $label-color-background;
+    padding-left: 4px;
+    color: rgba(135, 132, 146, 0.77);
+    text-align: center;
+    font-family: 'FontAwesome';
+  }
+}
+
+.label-id {
+  @include label;
+  &:before{
+    content: 'ID';
+  }
+}
+
+.label-status {
+  @include label;
+  &:before{
+    content: '\f05a';
+  }
+}
+
+.label-author {
+  @include label;
+  &:before{
+    content: '\f007';
+  }
+}
+
+.label-date {
+  @include label;
+  &:before{
+    content: '\f017';
+  }
+}
+
+.label-comment {
+  @include label;
+  &:before{
+    content: '\f075';
+  }
+}
+
+// лейбы -финиш
+
+button{
+  border: solid #d6d3e8 1px;
+  border-radius: 2px;
 }
