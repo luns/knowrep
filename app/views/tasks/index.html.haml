@@ -1,18 +1,33 @@
-.bl-header
-  = link_to '', new_task_path, class: 'fa fa-plus-square'
-- @tasks.each do |task|
-  .block
-    .label-id
-      = task.id
-    - if task.status == 'Завершено' then
-      .status-done
-        = link_to task.theme, task
-    - else
-      = link_to task.theme, task
-    .bl-right
-      .label-author
-        = task.author
-      .label-status
-        = task.status
-      .label-date
-        = task.updated_at.strftime('%m.%d.%Y %H:%M')
+.block
+  .bl-header
+    = link_to '', new_task_path, class: 'fa fa-plus-square'
+  %table
+    %tr.header
+      %td
+        ID
+      %td
+        Тема
+      %td
+        Автор
+      %td
+        Статус
+      %td
+        Обновлено
+    - @tasks.each do |task|
+      %tr.row
+        %td
+          = task.id
+          - if task.status == 'Завершено' then
+            %td.end
+              = link_to task.theme, task
+          - else
+            %td
+              = link_to task.theme, task
+        %td
+          = task.author
+        %td
+          = task.status
+        %td
+          = task.updated_at.strftime('%m.%d.%Y %H:%M')
+
+

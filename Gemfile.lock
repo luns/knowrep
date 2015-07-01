@@ -43,6 +43,7 @@ GEM
     bcrypt (3.1.10-x86-mingw32)
     breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
+    cancan (1.6.10)
     ckeditor (4.1.2)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -190,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   breadcrumbs_on_rails
+  cancan
   ckeditor
   coffee-rails (~> 4.1.0)
   devise

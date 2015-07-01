@@ -6,30 +6,32 @@
       = @task.id
     .label-status
       = @task.status
+    .label-author
+      = @task.author
+    .label-date
+      = @task.updated_at.strftime('%m.%d.%Y %H:%M')
     .bl-right
-      .label-author
-        = @task.author
-      .label-date
-        = @task.updated_at.strftime('%m.%d.%Y %H:%M')
+      .label-tools
+        = link_to 'править', edit_task_path(@task)
+        |
+        = link_to 'назад', tasks_path
   .bl-main
     %b= @task.theme
     = raw RedCloth.new(@task.description).to_html
-  .bl-footer
-    = link_to 'Edit', edit_task_path(@task)
-    = link_to 'Back', tasks_path
+  -#.bl-footer
     .bl-right
-
 - @task.comments.each do |comment|
   .block
     .bl-header
       .label-author
         = comment.commenter
       .bl-right
-        = link_to 'Удалить', [comment.task, comment], |
-          method: :delete,                                       |
-          data: { confirm: 'Удалить комментарий?' }
+        .label-tools
+          = link_to 'удалить', [comment.task, comment], |
+            method: :delete,                                       |
+            data: { confirm: 'Удалить комментарий?' }
     %p
-      = comment.body
+      = raw RedCloth.new(comment.body).to_html
 
 .block
   -#%h4 добавить комментарий:

@@ -59,4 +59,5 @@ gem 'breadcrumbs_on_rails'
 
 # аутенфикация
 gem 'devise'
+gem 'cancan'
 
