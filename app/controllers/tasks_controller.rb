@@ -1,15 +1,19 @@
 class TasksController < ApplicationController
+  add_breadcrumb 'tasks', :tasks_path
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
+    add_breadcrumb 'tasks', root_path
     @tasks = Task.all
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    add_breadcrumb @task.id, :task_path
   end
 
   # GET /tasks/new
@@ -24,6 +28,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+    add_breadcrumb 'add', root_path
     @task = Task.new(task_params)
 
     respond_to do |format|

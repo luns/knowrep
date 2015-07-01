@@ -21,38 +21,3 @@
   </div>
 </div>
 
-<div class="block">
-  <div class="bl-header">
-    <h2>комментарии</h2>
-    </div>
-
-  <% @page.comments.each do |comment| %>
-      <p>
-        <strong>автор:</strong>
-        <%= comment.commenter %>
-      </p>
-
-      <p>
-        <strong>комментарий:</strong>
-        <%= comment.body %>
-      </p>
-  <% end %>
-
-  <h2>добавить:</h2>
-  <%= form_for([@page, @page.comments.build]) do |f| %>
-      <p>
-        <%= f.label :commenter %><br>
-        <%= f.text_field :commenter %>
-      </p>
-
-      <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-      </p>
-
-      <p>
-        <%= f.submit %>
-      </p>
-  <% end %>
-
-</div>
