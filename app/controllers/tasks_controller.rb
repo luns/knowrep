@@ -1,13 +1,13 @@
 class TasksController < ApplicationController
-  add_breadcrumb "home", :root_path
-  add_breadcrumb "my", :task_path
+  # add_breadcrumb "home", :root_path
+  # add_breadcrumb "my", :task_path
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.all
-    add_breadcrumb "index", tasks_path
+    # add_breadcrumb "index", tasks_path
   end
 
   # GET /tasks/1

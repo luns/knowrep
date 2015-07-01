@@ -11,10 +11,21 @@
       header
     .content
       .routing-bar
-        knowrep
+        %b
+        = link_to '', root_path, :class => 'fa fa-home'
+        |
+        = link_to 'страницы', pages_path
+        |
+        = link_to 'задачи', tasks_path
+        -#.right
+          поиск
       .breadcrumbs
         = render_breadcrumbs
-      .nav-left
+      -#.nav-left
+        %p
+          = link_to 'страницы', pages_path
+        %p
+          = link_to 'задачи', tasks_path
       .main
         = yield
       .nav-right

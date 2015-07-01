@@ -128,11 +128,21 @@ hr {
   box-shadow: 0 1px 0px #303544;
 
   padding-left: 15px;
+  padding-right: 15px;
   padding-top: 10px;
   //font
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
+  .right{
+    float: right;
+    //display: inline;
+    width: 10%;
+
+  }
+  & a {
+    color: white;
+  }
 }
 
 .breadcrumbs {
